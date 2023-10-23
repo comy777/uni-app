@@ -1,0 +1,45 @@
+<template>
+  <div class="relative">
+    <div class="flex  w-[98%] bg-gray-100 rounded-3xl md:ml-4 sm:ml-0 md:text-xl md:h-full sm:h-12 items-center px-2">
+      <svg class="self-center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M19.3145 18.373L14.0449 13.1406C15.2324 11.7676 15.9004 10.0234 15.9004 8.09375C15.9004 3.86328 12.4121 0.375 8.18164 0.375C3.91406 0.375 0.5 3.86328 0.5 8.09375C0.5 12.3613 3.95117 15.8125 8.18164 15.8125C10.0742 15.8125 11.8184 15.1445 13.1914 13.957L18.4238 19.2266C18.5723 19.3379 18.7207 19.375 18.9063 19.375C19.0547 19.375 19.2031 19.3379 19.3145 19.2266C19.5371 19.0039 19.5371 18.5957 19.3145 18.373ZM8.21875 14.625C4.58203 14.625 1.6875 11.6934 1.6875 8.09375C1.6875 4.49414 4.58203 1.5625 8.21875 1.5625C11.8184 1.5625 14.75 4.49414 14.75 8.09375C14.75 11.7305 11.8184 14.625 8.21875 14.625Z"
+          fill="#373737" />
+      </svg>
+      <input 
+        type="search" 
+        :placeholder="placeholder" 
+        class="outline-none p-2 ml-2 rounded-3xl w-[98%] bg-gray-100"
+        v-model="search" 
+      />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref, watch } from 'vue'
+
+export default defineComponent({
+  name: 'Search',
+  props: {
+    value: {
+      type: String
+    },
+    placeholder: {
+      type: String,
+      required: true
+    }
+  },
+  setup(props, { emit }) {
+
+    const search = ref('')
+
+    watch(search, () => {
+      emit('handleSearch', search.value)
+    })
+
+    return { search, props }
+  }
+})
+
+</script>

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: iqt-action-dashboard
+spec:
+  rules:
+  - host: pulse.iqt.cuemby.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: iqt-action-dashboard-http
+            port:
+              number: 80
+  ingressClassName: nginx

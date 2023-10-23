@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+build:
+  artifacts:
+    - image: registry.digitalocean.com/hero7tech/iqt-pulse-dashboard
+  local:
+    useDockerCLI: true
+    useBuildkit: false
+profiles:
+  - name: dev
+    deploy:
+      kustomize:
+        paths: 
+        - k8s/dev
+  - name: prod
+    deploy:
+      kustomize:
+        paths: 
+        - k8s/prod

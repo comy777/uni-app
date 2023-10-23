@@ -1,0 +1,24 @@
+# Node and NPM special files
+node_modules
+
+# OS Specific files
+.DS_Store
+
+# Build files
+dist
+dist-ssr
+
+# Env files
+*.local
+
+# VueJS
+components.d.ts
+
+# Editors
+.idea/
+.vscode/
+.vimrc
+.nvimrc
+.vimspector
+.package-lock.json
+.env

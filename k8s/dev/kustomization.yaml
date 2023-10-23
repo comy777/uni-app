@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: services
+
+bases:
+ - ../base
+
+resources:
+  - ingress.yaml
+
+namePrefix: iqt-action-dashboard-
+
+commonLabels:
+  project: iqt
+  component: iqt-action-dashboard
+
+images:
+  - name: http-image
+    newName: registry.digitalocean.com/xyz/iqt-pulse-dashboard
+    

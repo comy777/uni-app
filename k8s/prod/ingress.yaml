@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: iqt-action-dashboard
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - app.pulsenet.cuemby.io
+    secretName: dashboard-pulsenet-cuemby-io
+  rules:
+  - host: app.pulsenet.cuemby.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: iqt-action-dashboard-http
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: iqt-action-dashboard-pulsenet
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - app.pulsenet.org
+    secretName: dashboard-pulsenet
+  rules:
+  - host: app.pulsenet.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: iqt-action-dashboard-http
+            port:
+              number: 80
+  
