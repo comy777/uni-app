@@ -8,7 +8,7 @@
           <h2 v-else class="text-3xl font-semibold">Hello</h2>
         </div>
         <div class="my-6">
-          <div class="min-h-[27vh] max-h-[60vh] h-[11.5rem] md:h-[11.8rem] overflow-x-auto resize-y">
+          <div class="min-h-[27vh] max-h-[60vh] h-[11.5rem] md:h-[11.8rem] overflow-x-auto resize-y sm:w-full">
             <NotesWidget title="Mis links" />
           </div>
         </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:w-96 md:w-full h-full py-5 p-3 md:p-0">
+  <div class="sm:w-full md:w-full h-full py-5 p-3 md:p-0">
     <div class="bg-[#351C35] h-full rounded-xl overflow-auto">
       <div class="sticky top-0 bg-[#351C35] z-10">
         <div class="flex justify-between p-3">
