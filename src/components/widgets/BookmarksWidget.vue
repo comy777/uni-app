@@ -92,7 +92,6 @@ export default defineComponent({
     const getDataLinks = async () => {
       const dataJSON = localStorage.getItem('links');
       const data = JSON.parse(dataJSON);
-      console.log('🚀 ~ file: BookmarksWidget.vue:88 ~ getDataLinks ~ data:', data);
       if (data) dataNotes.value = data;
     };
 

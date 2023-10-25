@@ -77,6 +77,7 @@ import { queryApi } from '../../utils/api';
 import { Article, IResponse } from '../../interfaces/interfaces';
 import { v4 as uuid } from 'uuid';
 import { useStore } from 'vuex';
+import { hardwareData, softwareData } from '../../utils/data';
 
 export default defineComponent({
   name: 'Reminder widget',
@@ -163,9 +164,9 @@ export default defineComponent({
 
     const completeReminder = async (id: string) => {
       let complete = false;
-      const result = allReminders.value.map((value, i) => (value.id === id ? { ...value, completed: !value.completed } : value));
+      const result = allReminders.value.map((value) => (value.id === id ? { ...value, completed: !value.completed } : value));
       allReminders.value = result;
-      reminders.value = reminders.value.map((value, i) => {
+      reminders.value = reminders.value.map((value) => {
         if (value.id === id) {
           complete = !value.completed;
           return { ...value, completed: !value.completed };
@@ -187,7 +188,7 @@ export default defineComponent({
     };
 
     const getData = async () => {
-      const resp = await queryApi<IResponse>('/everything', props.title.toLowerCase());
+      const resp = props.title === 'Hardware' ? hardwareData() : softwareData();
       if (!resp) return;
       const { articles } = resp;
       reminders.value = articles.map((value) => {
