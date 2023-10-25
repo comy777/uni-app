@@ -1,10 +1,10 @@
 <template>
-  <div v-if="!loading" class="sm:p-0 md:px-2 md:w-[78%] lg:w-[75%] h-full flex justify-center sm:mt-0 bg-white">
+  <div v-if="!loading" class="sm:p-0 md:px-2 md:w-full h-full flex justify-center sm:mt-0 bg-white">
     <div class="w-full">
       <div v-if="isWidget" class="md:pr-5 sm:pr-3">
         <!-- GRETTING MESSAGE -->
         <div id="Greeting" class="md:pl-4 pl-8 md:pt-10 md:mb-4 sm:pl-0 md:ml-0 sm:ml-4 sm:mt-4 md:mt-0">
-          <h2 v-if="name" class="sm:text-xl md:text-3xl font-semibold md:w-full">Hello, {{ name }}</h2>
+          <h2 v-if="name" class="sm:text-xl md:text-3xl font-semibold md:w-full">Welcome to uni app news</h2>
           <h2 v-else class="text-3xl font-semibold">Hello</h2>
         </div>
         <div class="my-6">
@@ -13,14 +13,14 @@
           </div>
         </div>
 
-        <div class="flex justify-evenly w-full">
+        <div class="sm:block md:flex justify-evenly w-full">
           <div class="grid md:grid-cols-2 gap-4">
-            <div class="max-h-[67vh]">
+            <div>
               <ReminderWidget title="Software" />
             </div>
           </div>
           <div class="grid md:grid-cols-2 gap-4">
-            <div class="max-h-[67vh]">
+            <div>
               <ReminderWidget title="Hardware" />
             </div>
           </div>

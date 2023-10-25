@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-        <div class="sm:w-full md:w-[38%] overflow-y-scroll rounded-tr-3xl rounded-br-3xl bg-gray-100 py-4 md:px-8 sm:px-4">
+        <div class="sm:w-full md:w-[55%] overflow-y-scroll rounded-tr-3xl rounded-br-3xl bg-gray-100 py-4 md:px-8 sm:px-4">
           <div class="my-4" v-for="(reminder, i) in reminders" :key="i">
             <div class="flex relative justify-between">
               <div>

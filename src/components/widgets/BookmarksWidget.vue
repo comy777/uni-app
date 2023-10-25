@@ -3,7 +3,7 @@
     <div class="bg-[#351C35] h-full rounded-xl overflow-auto">
       <div class="sticky top-0 bg-[#351C35] z-10">
         <div class="flex justify-between p-3">
-          <LinkIcon class="text-white h-10 w-8" /><span class="text-white font-bold py-2 justify-center flex">{{ title }}</span>
+          <LinkIcon class="text-white h-10 w-8" /><span class="text-white font-bold py-2 justify-center flex">Links</span>
           <button>
             <ThreePointsIcon class="text-white h-5 w-5 justify-left" @click="addNewNote()" />
           </button>

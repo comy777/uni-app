@@ -4,9 +4,9 @@
     <div @click="handleShowMenu" class="hover:cursor-pointer bg-white ml-8 md:hidden">
       <ToggleMenuIcon />
     </div>
-    <div class="md:w-[20vw] lg:w-[25vw] sm:pr-4 sm:bg-[#F2F2F3] flex items-center justify-end md:absolute md:top-0 md:right-0 sm:relative md:bg-white z-10">
+    <!-- <div class="md:w-[20vw] lg:w-[25vw] sm:pr-4 sm:bg-[#F2F2F3] flex items-center justify-end md:absolute md:top-0 md:right-0 sm:relative md:bg-white z-10">
       <AlertIconHeader />
-    </div>
+    </div> -->
   </div>
 </template>
 
